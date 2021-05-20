@@ -1,0 +1,35 @@
+{
+    "name": "hskrasek/scout-elasticsearch-doctrine",
+    "type": "library",
+    "description": "Search among multiple Doctrine entities with ElasticSearch and Laravel Scout",
+    "authors": [
+        {
+            "name": "Hunter Skrasek",
+            "email": "hunterskrasek@me.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.4|^8.0",
+        "elasticsearch/elasticsearch": ">=7.2",
+        "laravel/scout": "^6.1.1|^7.0",
+        "ongr/elasticsearch-dsl": "^7.0"
+    },
+    "require-dev": {
+        "laravel/framework": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HSkrasek\\LaravelDoctrine\\Scout\\DoctrineElasticSearch\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HSkrasek\\LaravelDoctrine\\Scout\\DoctrineElasticSearch\\ScoutElasticSearchServiceProvider"
+            ]
+        }
+    }
+}
