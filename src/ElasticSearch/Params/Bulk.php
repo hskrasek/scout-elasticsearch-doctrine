@@ -61,7 +61,6 @@ final class Bulk
 
                 $payload['body'][] = array_merge(
                     $entity->toSearchableArray(),
-                    $entity->scoutMetadata(),
                     [
                         '__class_name' => get_class($entity),
                     ]
