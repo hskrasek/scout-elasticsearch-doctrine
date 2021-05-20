@@ -17,28 +17,28 @@ final class Bulk
     {
         //TODO: Add assertions or is_iterable check to throw an exception
         //TODO: Add instance of LaravelDoctrine Searchable
-        if (is_object($docs)) {
-            $this->deleteDocs[$docs->getKey()] = $docs;
+        if (is_iterable($docs)) {
+            foreach ($docs as $doc) {
+                $this->delete($doc);
+            }
 
             return;
         }
 
-        foreach ($docs as $doc) {
-            $this->delete($doc);
-        }
+        $this->deleteDocs[$docs->getKey()] = $docs;
     }
 
     public function index($docs): void
     {
-        if (is_object($docs)) {
-            $this->indexDocs[$docs->getKey()] = $docs;
+        if (is_iterable($docs)) {
+            foreach ($docs as $doc) {
+                $this->index($doc);
+            }
 
             return;
         }
 
-        foreach ($docs as $doc) {
-            $this->index($doc);
-        }
+        $this->indexDocs[$docs->getKey()] = $docs;
     }
 
     public function toArray(): array
