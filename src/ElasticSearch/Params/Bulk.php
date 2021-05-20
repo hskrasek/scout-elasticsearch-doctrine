@@ -54,7 +54,6 @@ final class Bulk
                     'index' => [
                         '_index'  => $entity->searchableAs(),
                         '_id'     => $scoutKey,
-                        '_type'   => 'doc',
                         'routing' => $scoutKey,
                     ],
                 ];
@@ -79,7 +78,6 @@ final class Bulk
                     'delete' => [
                         '_index'  => $entity->searchableAs(),
                         '_id'     => $scoutKey,
-                        '_type'   => 'doc',
                         'routing' => $scoutKey,
                     ],
                 ];
