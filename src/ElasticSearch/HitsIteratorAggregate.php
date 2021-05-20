@@ -6,5 +6,5 @@ namespace HSkrasek\LaravelDoctrine\Scout\DoctrineElasticSearch\ElasticSearch;
 
 interface HitsIteratorAggregate extends \IteratorAggregate
 {
-    public function __construct(array $results, callable $callback);
+    public function __construct(array $results, callable $callback = null);
 }

@@ -7,11 +7,11 @@ class DoctrineHitsIteratorAggregate implements HitsIteratorAggregate
     private array $results;
 
     /**
-     * @var callable
+     * @var callable|null
      */
     private $callback;
 
-    public function __construct(array $results, callable $callback)
+    public function __construct(array $results, callable $callback = null)
     {
         $this->results  = $results;
         $this->callback = $callback;
