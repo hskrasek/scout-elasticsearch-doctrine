@@ -7,6 +7,7 @@ namespace HSkrasek\LaravelDoctrine\Scout\DoctrineElasticSearch\Engines;
 use Elasticsearch\Client;
 use Elasticsearch\Common\Exceptions\ServerErrorResponseException;
 use Exception;
+use HSkrasek\LaravelDoctrine\Scout\DoctrineElasticSearch\ElasticSearch\HitsIteratorAggregate;
 use HSkrasek\LaravelDoctrine\Scout\DoctrineElasticSearch\ElasticSearch\Params\Bulk;
 use HSkrasek\LaravelDoctrine\Scout\DoctrineElasticSearch\ElasticSearch\Params\Indices\Refresh;
 use HSkrasek\LaravelDoctrine\Scout\DoctrineElasticSearch\ElasticSearch\Params\Search as SearchParams;
@@ -72,7 +73,6 @@ class ElasticSearchEngine extends Engine
 
     public function map(Builder $builder, $results, $model)
     {
-        // TODO: Create HitsIteratorAggregate
         $hits = app()->makeWith(
             HitsIteratorAggregate::class,
             [
