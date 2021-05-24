@@ -27,7 +27,7 @@ class DoctrineHitsIteratorAggregate implements HitsIteratorAggregate
 
     public function getIterator(): \ArrayIterator
     {
-        if ($this->results['hits']['total'] <= 0) {
+        if ($this->results['hits']['total']['value'] <= 0) {
             return new \ArrayIterator([]);
         }
 
